@@ -1,5 +1,9 @@
 # Undergraduate Critical Thinking — Smiley Arc
 
-![Smiley running on phone emulator in landscape](evidence/smiley_landscape.png)
+![Smiley running on phone emulator in landscape](evidence/smiley1.png)
+
+![Smiley running on phone emulator in landscape with dropdown](evidence/smiley2.png)
+
+![Frowny running on phone emulator in portrait](evidence/smiley3.png)
 
 I centered the face using `Offset(size.width / 2, size.height / 2)` and made the radius `size.shortestSide * 0.40`. For the smile, I used a `Rect` centered slightly below the face center with a width based on the radius, and my happy smile starts at about `0.15 * pi` with a `0.70 * pi` sweep. I tested the app on the phone emulator in both portrait and landscape, and using `size.shortestSide` kept the face and mouth from getting cut off when the available screen dimensions changed. I also used the smaller available width or height for the `CustomPaint` size so the drawing could shrink when the phone was rotated. `shouldRepaint` returns true when the mood, face type, or face color changes because the drawing needs to update, but it stays false when those inputs stay the same so Flutter does not redraw the painter unnecessarily.
